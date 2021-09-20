@@ -1,0 +1,86 @@
+$start: left !default;
+$end: right !default;
+
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @for $i from 0 through 100 {
+            .mr#{$infix}-#{$i} {
+                margin: (2px * $i) !important;
+            }
+
+            .mrb#{$infix}-#{$i} {
+                margin-bottom: (2px * $i) !important;
+            }
+
+            .mrt#{$infix}-#{$i} {
+                margin-top: (2px * $i) !important;
+            }
+
+            .mrs#{$infix}-#{$i} {
+                margin-#{$start}: (2px * $i) !important;
+            }
+
+            .mre#{$infix}-#{$i} {
+                margin-#{$end}: (2px * $i) !important;
+            }
+
+            .mrse#{$infix}-#{$i} {
+                margin-#{$end}: (2px * $i) !important;
+                margin-#{$start}: (2px * $i) !important;
+            }
+
+            .mrtb#{$infix}-#{$i} {
+                margin-top: (2px * $i) !important;
+                margin-bottom: (2px * $i) !important;
+            }
+
+            .p#{$infix}-#{$i} {
+                padding: (2px * $i) !important;
+            }
+
+            .pb#{$infix}-#{$i} {
+                padding-bottom: (2px * $i) !important;
+            }
+
+            .pt#{$infix}-#{$i} {
+                padding-top: (2px * $i) !important;
+            }
+
+            .ps#{$infix}-#{$i} {
+                padding-#{$start}: (2px * $i) !important;
+            }
+
+            .pe#{$infix}-#{$i} {
+                padding-#{$end}: (2px * $i) !important;
+            }
+
+            .pse#{$infix}-#{$i} {
+                padding-#{$start}: (2px * $i) !important;
+                padding-#{$end}: (2px * $i) !important;
+            }
+
+            .ptb#{$infix}-#{$i} {
+                padding-top: (2px * $i) !important;
+                padding-bottom: (2px * $i) !important;
+            }
+        }
+
+        .text#{$infix}-start {
+            text-align: $start !important;
+        }
+
+        .text#{$infix}-center {
+            text-align: center !important;
+            * {
+                text-align: center;
+            }
+        }
+        
+        .text#{$infix}-end {
+            text-align: $end !important;
+        }
+    }
+}

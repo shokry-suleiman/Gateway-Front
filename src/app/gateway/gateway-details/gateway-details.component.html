@@ -1,0 +1,57 @@
+<section class="mrtb-30 pb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 d-flex align-items-center justify-content-end">
+                <button type="button" class="btn btn-danger text-white ptb-4 max-140 w-100 size-10 border-radius-0"
+                    (click)="deleteGateway()">
+                    <img src="../../../assets/images/delete.svg" alt="" class="add mre-2">
+                    Delete
+                </button>
+            </div>
+            <div class="col-sm-3">
+                <div class="size-20 weight-500 mrb-14">Ipv4 </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="size-20 weight-400 text-gray1 mrb-14">{{ gateway?.ipv4 }}</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="size-20 weight-500 mrb-14">Name</div>
+            </div>
+            <div class="col-sm-9">
+                <div class="size-20 weight-400 text-gray1 text-capitalize mrb-14">{{ gateway?.name }}</div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="size-20 weight-500 mrb-14">Serial Number </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="size-20 weight-400 text-gray1 mrb-14">{{ gateway?.serialNo }}</div>
+            </div>
+
+        </div>
+        <div class="d-flex align-items-center justify-content-between mrb-20 mrt-80">
+            <div class="size-30 weight-500 text-capitalize ">associated peripheral devices ({{devices?.length}})</div>
+            <button type="button" class="btn btn-success text-white ptb-4 max-140 w-100 size-10 border-radius-0"
+                (click)="addDevice()">
+                <img src="../../../assets/images/plus.svg" alt="" class="add mre-2"> device
+            </button>
+        </div>
+        <table class="table table-dark table-hover" *ngIf="devices.length > 0">
+            <thead>
+                <tr>
+                    <th scope="col">Vendor</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let device of devices;let i = index">
+                    <td>{{ device?.vendor }}</td>
+                    <td>{{ device?.status }}</td>
+                    <td><img src="../../../assets/images/delete.svg" alt="" class="del cursor-pointer"
+                            (click)="deleteDevice(i)"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

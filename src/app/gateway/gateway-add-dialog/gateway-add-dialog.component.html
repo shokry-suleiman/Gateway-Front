@@ -1,0 +1,29 @@
+<section class="mrtb-15">
+    <div class="container">
+        <form [formGroup]="gatewayForm" (ngSubmit)="createGateway()">
+            <div class="text-dark size-12 weight-400">Create Gateway</div>
+            <div class="mrt-8">
+                <label for="name" class="form-label" class="text-dark size-8 mrb-4">Name</label>
+                <input type="text" class="form-control" id="name"
+                    [class.is-invalid]="name?.invalid && (name?.dirty || name?.touched)" formControlName="name">
+                <div class="invalid-feedback">
+                    <p *ngIf="name?.errors?.required">
+                        Name required!
+                    </p>
+                </div>
+            </div>
+            <div class="mrt-8">
+                <label for="ipv4" class="text-dark size-8 mrb-4">Ipv4</label>
+                <input type="text" class="form-control" id="ipv4"
+                    [class.is-invalid]="ipv4?.invalid && (ipv4?.dirty || ipv4?.touched)" formControlName="ipv4">
+                <div class="invalid-feedback">
+                    <p *ngIf="name?.errors?.required">
+                        Ipv4 required!
+                    </p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark mrt-16 max-150 w-100 size-6 ptb-4"
+                [disabled]="gatewayForm.invalid || isSubmitting">Create</button>
+        </form>
+    </div>
+</section>

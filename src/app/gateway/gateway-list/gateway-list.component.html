@@ -1,0 +1,8 @@
+<div class="container">
+	<div class="row mrtb-30">
+		<div class="col-md-3" *ngFor="let gateway of gateways;">
+			<app-gateway-item [name]="gateway?.name" [ipv4]="gateway?.ipv4" [serialNo]="gateway?.serialNo"
+				[id]="gateway?._id"></app-gateway-item>
+		</div>
+	</div>
+</div>

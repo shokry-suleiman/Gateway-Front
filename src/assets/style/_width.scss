@@ -1,0 +1,27 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        //max-width
+        $i: 10;
+
+        @while $i < 1600 {
+            .max#{$infix}-#{$i} {
+                max-width: (1px * $i);
+            }
+
+            $i: $i+10;
+        }
+
+        //min-width
+        $i: 10;
+
+        @while $i < 1600 {
+            .min#{$infix}-#{$i} {
+                min-width: (1px * $i);
+            }
+
+            $i: $i+10;
+        }
+    }
+}

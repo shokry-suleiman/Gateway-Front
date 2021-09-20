@@ -1,0 +1,32 @@
+<section class="mrtb-15">
+    <div class="container">
+        <form [formGroup]="deviceForm" (ngSubmit)="createDevice()">
+            <div class="mrt-8">
+                <label for="vendor" class="form-label" class="text-dark size-8 mrb-4">Vendor</label>
+                <input type="text" class="form-control" id="vendor"
+                    [class.is-invalid]="vendor?.invalid && (vendor?.dirty || vendor?.touched)" formControlName="vendor">
+                <div class="invalid-feedback">
+                    <p *ngIf="vendor?.errors?.required">
+                        Vendor required!
+                    </p>
+                </div>
+            </div>
+            <div class="mrt-8">
+                <label for="status" class="text-dark size-8 mrb-4">Status</label>
+                <select class="form-select" id="status"
+                    [class.is-invalid]="status?.invalid && (status?.dirty || status?.touched)" formControlName="status">
+                    <option selected>Open this select menu</option>
+                    <option value="Online">Online</option>
+                    <option value="Offline">Offline</option>
+                </select>
+                <div class="invalid-feedback">
+                    <p *ngIf="status?.errors?.required">
+                        Status required!
+                    </p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark mrt-16 max-150 w-100 size-6 ptb-4"
+                [disabled]="deviceForm.invalid || isSubmitting">Create</button>
+        </form>
+    </div>
+</section>

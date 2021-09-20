@@ -1,0 +1,38 @@
+@import "theme-colors.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap');
+$theme-colors: (
+  "primary": $primary,
+  "dark": $dark,
+  "white": $white,
+  "secondary":$secondary,
+  "orange1":$orange1,
+  "orange2":$orange2,
+  "gray1":$gray1,
+  "gray2":$gray2,
+  "gray3":$gray3,
+  "danger":$danger,
+  "success":$success
+);
+
+
+$font-family-base: 'Roboto', sans-serif;
+$body-bg: $white;
+@import 'bootstrap/bootstrap.scss';
+@import 'typography.scss';
+@import 'width.scss';
+
+
+html[dir=ltr] {
+    $start:left;
+    $end:right;
+    @import 'spacing';
+    @import 'generics.scss';
+
+
+}
+html[dir=rtl] {
+    $start:right;
+    $end:left;
+    @import 'spacing';
+    @import 'generics.scss';
+}

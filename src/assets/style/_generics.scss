@@ -1,0 +1,41 @@
+$i: 0;
+@while $i < 51 {
+	.border-radius-#{$i} {
+		border-radius: $i * 1px;
+	}
+	$i: $i + 1;
+}
+
+
+
+.cursor-pointer {
+	cursor: pointer;
+}
+.box-shadow {
+	box-shadow: 0px 11px 22px #6ba4e312;
+}
+// ::-webkit-scrollbar {
+// 	display: none;
+// }
+  
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+::-moz-placeholder {
+	/* Firefox 19+ */
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+:-ms-input-placeholder {
+	/* IE 10+ */
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+:-moz-placeholder {
+	/* Firefox 18- */
+	/* height: 19px; */
+	font-size: 0.875rem;
+	font-weight: 500;
+}
